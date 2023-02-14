@@ -1,0 +1,37 @@
+<html>
+    <head>
+    <style>
+        body{
+            background-color: bisque;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+<h1>Along came Noodle</h1>
+
+</head>
+    <script>
+   
+
+    function getName()
+        {
+        var myName = document.getElementById("choice").value;
+        var myDirection = document.getElementById("direction");
+        myDirection.innerHTML = "Hello," + myName +"! You and Noodle are going to on a great adventure.";
+        console.log(myName);
+        }
+    </script>
+
+<body>
+
+    <div id="direction">
+        <br>
+        This is a story about YOU and a Panda named Noodle.
+        <br><br>
+        Before we begin, what is your name?
+    </div>
+
+    <input type="text" size="20" id="choice" value="Please enter your name">
+    <button id="btnSubmit" onclick="getName();">Click to continue</button>
+</body>
+</html>
