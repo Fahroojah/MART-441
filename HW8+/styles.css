@@ -1,0 +1,18 @@
+#art-container {
+    width: 80%;  /* 80% of the viewport width */
+    height: 80%; /* 80% of the viewport height */
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid #000; /* Optional: adds a border for visibility */
+}
+
+.image, .shape {
+    position: absolute;
+    display: none;
+}
+
+.text {
+    position: absolute;
+    font-size: 20px;
+}
+
