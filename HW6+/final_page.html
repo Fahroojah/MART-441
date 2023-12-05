@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memory Matching Game - Final Page</title>
+    <meta charset="UTF-8">    
+    <link rel="stylesheet" href="styles/styles.css">
+    
+</head>
+<body>
+    <h1>Memory Matching Game - Final Page</h1>
+    <div id="finalInfo">
+        <p>Name: <span id="finalFirstName"></span> <span id="finalLastName"></span></p>
+        <p>Age: <span id="finalAge"></span></p>
+        <p>Attempts: <span id="finalAttempts"></span></p>
+    </div>
+
+    <script>
+        const playerData = JSON.parse(localStorage.getItem("playerData"));
+
+        if (playerData) {
+            document.getElementById("finalFirstName").textContent = playerData.firstName;
+            document.getElementById("finalLastName").textContent = playerData.lastName;
+            document.getElementById("finalAge").textContent = playerData.age;
+            document.getElementById("finalAttempts").textContent = playerData.attempts;
+        } else {
+            // Handle the case where playerData is not found in local storage.
+            // You can redirect the user back to the information gathering page or show an error message.
+        }
+    </script>
+</body>
+</html>
