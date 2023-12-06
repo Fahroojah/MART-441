@@ -1,18 +1,58 @@
-#art-container {
-    width: 80%;  /* 80% of the viewport width */
-    height: 80%; /* 80% of the viewport height */
-    position: relative;
-    margin: 0 auto;
-    border: 1px solid #000; /* Optional: adds a border for visibility */
+#refreshButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #000; 
+    color: #0f0; 
+    border: 2px solid #0f0; 
+    border-radius: 5px; 
+    font-size: 16px;
+    font-family: 'Courier New', monospace; 
+    cursor: pointer;
+    transition: all 0.5s ease; 
+    z-index: 1000; 
 }
 
-.image, .shape {
+#refreshButton:hover {
+    width: 30vw; 
+    height: 30vh; 
+    border-radius: 0; 
+    font-size: 36px; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1); 
+}
+
+.shape {
     position: absolute;
     display: none;
+    background-color: #fff; /* Default color, can be overridden */
 }
 
-.text {
-    position: absolute;
-    font-size: 20px;
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
+
+.square {
+    width: 50px;
+    height: 50px;
+}
+
+.rectangle {
+    width: 100px;
+    height: 50px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 60px solid #fff;
+}
+
 

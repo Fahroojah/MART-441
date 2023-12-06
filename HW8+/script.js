@@ -2,7 +2,10 @@ $(document).ready(function() {
     // Arrays to hold your images, texts, and shapes
     let images = ['images/fatbike.jpg', 'images/gofish.jpg', 'images/mountainbike.jpg', 'images/roadbike.jpg', 'images/tricycle.jpg', 'images/unicycle.jpg'];
     let texts = ['The only constant in life is change.','Actions speak louder than words','In the midst of challenges lie opportunities.','Learning from the past shapes a wiser future.','Happiness is a journey, not a destination.'];
-    let shapes = ['<div class="shape" style="width: 100px; height: 100px;"></div>'];
+    let shapes = ['<div class="shape" style="width: 100px; height: 100px;"></div>','<div class="shape circle"></div>',
+        '<div class="shape square"></div>',
+        '<div class="shape rectangle"></div>',
+        '<div class="shape triangle"></div>',];
 
     let currentImage = 0;
     let currentText = 0;
@@ -69,5 +72,17 @@ $(document).ready(function() {
     rotateImages();
     rotateTexts();
     moveShapes();
+
+    function refreshAnimations() {
+        $('#art-container').empty(); // Removes current images, texts, and shapes
+        startAnimations(); // Restart animations
+    }
+
+    // Event listener for the button
+    $('#refreshButton').click(refreshAnimations);
+
+    // Start initial animations
+    startAnimations();
 });
+
 
