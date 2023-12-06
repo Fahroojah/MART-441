@@ -23,15 +23,32 @@ let score = 0;
 let objects = []; // For non-collidable objects
 let collectibles = []; // For collidable collectibles
 
+// Assuming these values are the maximum for random positions
+const maxWidth = canvas.width - 30; // Adjust 30 if the size of the objects changes
+const maxHeight = canvas.height - 30;
+
+
+
+
 // Load objects from JSON file
-fetch('objects.json').then(response => response.json()).then(data => {
-    data.forEach(obj => objects.push(new CanvasObject(obj.x, obj.y, obj.size, obj.color)));
+//Hosted files are able to be fetched properly w/o browser security issues - JF
+
+fetch('https://raw.githubusercontent.com/Fahroojah/MART-441/main/HW12/objects.json').then(response => response.json()).then(data => {
+    data.forEach(() => {
+        let x = Math.random() * maxWidth;
+        let y = Math.random() * maxHeight;
+        objects.push(new CanvasObject(x, y, 30, "green"));
+    });
 });
 
 // Load collectibles from another JSON file
-fetch('collectibles.json').then(response => response.json()).then(data => {
-    data.forEach(obj => collectibles.push(new CanvasObject(obj.x, obj.y, obj.size, obj.color)));
-});
+    fetch('https://raw.githubusercontent.com/Fahroojah/MART-441/main/HW12/collectibles.json').then(response => response.json()).then(data => {
+        data.forEach(() => {
+            let x = Math.random() * maxWidth;
+            let y = Math.random() * maxHeight;
+            collectibles.push(new CanvasObject(x, y, 20, "yellow"));
+        });
+    });
 
 let keys = {};
 
@@ -73,6 +90,7 @@ CanvasObject.prototype.collidesWith = function(other) {
 
 document.addEventListener("keydown", event => keys[event.key] = true);
 document.addEventListener("keyup", event => keys[event.key] = false);
+
 
 
 gameLoop();
