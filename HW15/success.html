@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submission Success</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Submission Successful</h1>
+    <p id="userInfo"></p>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name');
+            const email = params.get('email');
+            document.getElementById('userInfo').innerHTML = `Name: ${name}, Email: ${email}`;
+        };
+    </script>
+</body>
+</html>
